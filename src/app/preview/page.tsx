@@ -1,7 +1,34 @@
+'use client';
+
+import { useState } from 'react';
 import Card from '@/components/ui/Card/Card';
 import Icon from '@/components/ui/Icon/Icon';
+import Avatar from '@/components/ui/Avatar/Avatar';
+import Button from '@/components/ui/Button/Button';
+import Modal from '@/components/ui/Modal/Modal';
 
 export default function PreviewPage() {
+  const [modalStates, setModalStates] = useState({
+    primary: false,
+    secondary: false,
+    success: false,
+    danger: false,
+    warning: false,
+    small: false,
+    medium: false,
+    large: false,
+    noTitle: false,
+    noCloseButton: false,
+  });
+
+  const openModal = (key: keyof typeof modalStates) => {
+    setModalStates(prev => ({ ...prev, [key]: true }));
+  };
+
+  const closeModal = (key: keyof typeof modalStates) => {
+    setModalStates(prev => ({ ...prev, [key]: false }));
+  };
+
   return (
     <main className="min-h-screen bg-background p-8">
       <div className="max-w-6xl mx-auto space-y-12">
@@ -183,6 +210,257 @@ export default function PreviewPage() {
               </Icon>
             </div>
           </div>
+        </section>
+
+        {/* Avatar Component */}
+        <section className="space-y-6">
+          <div>
+            <h2 className="text-2xl font-semibold mb-4 text-foreground">Avatar</h2>
+          </div>
+
+          {/* Variants */}
+          <div>
+            <h3 className="text-lg font-medium mb-3 text-foreground">Variants</h3>
+            <div className="flex flex-wrap gap-4">
+              <Avatar name="John Doe" variant="default" />
+              <Avatar name="Jane Smith" variant="primary" />
+              <Avatar name="Bob Wilson" variant="secondary" />
+              <Avatar name="Alice Brown" variant="accent" />
+            </div>
+          </div>
+
+          {/* Sizes */}
+          <div>
+            <h3 className="text-lg font-medium mb-3 text-foreground">Sizes</h3>
+            <div className="flex items-center gap-4">
+              <Avatar name="John Doe" size="sm" variant="primary" />
+              <Avatar name="John Doe" size="md" variant="primary" />
+              <Avatar name="John Doe" size="lg" variant="primary" />
+              <Avatar name="John Doe" size="xl" variant="primary" />
+            </div>
+          </div>
+
+          {/* Combined Props */}
+          <div>
+            <h3 className="text-lg font-medium mb-3 text-foreground">Combined Props</h3>
+            <div className="flex gap-4">
+              <Avatar name="Alex" size="xl" variant="primary" />
+              <Avatar name="Sam Johnson" size="xl" variant="secondary" />
+              <Avatar name="Taylor Green" size="xl" variant="accent" />
+            </div>
+          </div>
+        </section>
+
+        {/* Button Component */}
+        <section className="space-y-6">
+          <div>
+            <h2 className="text-2xl font-semibold mb-4 text-foreground">Button</h2>
+          </div>
+
+          {/* Variants */}
+          <div>
+            <h3 className="text-lg font-medium mb-3 text-foreground">Variants</h3>
+            <div className="flex flex-wrap gap-4">
+              <Button variant="default">Default</Button>
+              <Button variant="primary">Primary</Button>
+              <Button variant="secondary">Secondary</Button>
+              <Button variant="accent">Accent</Button>
+              <Button variant="outline">Outline</Button>
+              <Button variant="ghost">Ghost</Button>
+            </div>
+          </div>
+
+          {/* Sizes */}
+          <div>
+            <h3 className="text-lg font-medium mb-3 text-foreground">Sizes</h3>
+            <div className="flex items-center gap-4">
+              <Button size="sm" variant="primary">Small</Button>
+              <Button size="md" variant="primary">Medium</Button>
+              <Button size="lg" variant="primary">Large</Button>
+              <Button size="xl" variant="primary">Extra Large</Button>
+            </div>
+          </div>
+
+          {/* Disabled State */}
+          <div>
+            <h3 className="text-lg font-medium mb-3 text-foreground">Disabled State</h3>
+            <div className="flex gap-4">
+              <Button variant="primary">Enabled</Button>
+              <Button variant="primary" disabled>Disabled</Button>
+            </div>
+          </div>
+
+          {/* Combined Props */}
+          <div>
+            <h3 className="text-lg font-medium mb-3 text-foreground">Combined Props</h3>
+            <div className="flex gap-4">
+              <Button size="lg" variant="primary">Click Me</Button>
+              <Button size="lg" variant="secondary">Learn More</Button>
+              <Button size="lg" variant="outline">Cancel</Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Modal Component */}
+        <section className="space-y-6">
+          <div>
+            <h2 className="text-2xl font-semibold mb-4 text-foreground">Modal</h2>
+          </div>
+
+          {/* Variants */}
+          <div>
+            <h3 className="text-lg font-medium mb-3 text-foreground">Variants</h3>
+            <div className="flex flex-wrap gap-4">
+              <Button variant="primary" onClick={() => openModal('primary')}>
+                Primary Modal
+              </Button>
+              <Button variant="secondary" onClick={() => openModal('secondary')}>
+                Secondary Modal
+              </Button>
+              <Button variant="accent" onClick={() => openModal('success')}>
+                Success Modal
+              </Button>
+              <Button variant="default" onClick={() => openModal('danger')}>
+                Danger Modal
+              </Button>
+              <Button variant="default" onClick={() => openModal('warning')}>
+                Warning Modal
+              </Button>
+            </div>
+          </div>
+
+          {/* Sizes */}
+          <div>
+            <h3 className="text-lg font-medium mb-3 text-foreground">Sizes</h3>
+            <div className="flex items-center gap-4">
+              <Button variant="primary" onClick={() => openModal('small')}>
+                Small Modal
+              </Button>
+              <Button variant="primary" onClick={() => openModal('medium')}>
+                Medium Modal
+              </Button>
+              <Button variant="primary" onClick={() => openModal('large')}>
+                Large Modal
+              </Button>
+            </div>
+          </div>
+
+          {/* Special Cases */}
+          <div>
+            <h3 className="text-lg font-medium mb-3 text-foreground">Special Cases</h3>
+            <div className="flex gap-4">
+              <Button variant="outline" onClick={() => openModal('noTitle')}>
+                No Title
+              </Button>
+              <Button variant="outline" onClick={() => openModal('noCloseButton')}>
+                No Close Button
+              </Button>
+            </div>
+          </div>
+
+          {/* Modal instances */}
+          <Modal
+            isOpen={modalStates.primary}
+            onClose={() => closeModal('primary')}
+            title="Primary Modal"
+            variant="primary"
+          >
+            <p>This is a primary modal with blue header styling and a semi-transparent backdrop.</p>
+          </Modal>
+
+          <Modal
+            isOpen={modalStates.secondary}
+            onClose={() => closeModal('secondary')}
+            title="Secondary Modal"
+            variant="secondary"
+          >
+            <p>This is a secondary modal with purple header styling and a semi-transparent backdrop.</p>
+          </Modal>
+
+          <Modal
+            isOpen={modalStates.success}
+            onClose={() => closeModal('success')}
+            title="Success Modal"
+            variant="success"
+          >
+            <p>This is a success modal with green header styling. Great for confirmation messages!</p>
+          </Modal>
+
+          <Modal
+            isOpen={modalStates.danger}
+            onClose={() => closeModal('danger')}
+            title="Danger Modal"
+            variant="danger"
+          >
+            <p>This is a danger modal with red header styling. Use for warnings or destructive actions.</p>
+          </Modal>
+
+          <Modal
+            isOpen={modalStates.warning}
+            onClose={() => closeModal('warning')}
+            title="Warning Modal"
+            variant="warning"
+          >
+            <p>This is a warning modal with amber header styling. Use for important notices.</p>
+          </Modal>
+
+          <Modal
+            isOpen={modalStates.small}
+            onClose={() => closeModal('small')}
+            title="Small Modal"
+            size="sm"
+            variant="primary"
+          >
+            <p>This is a small modal perfect for brief messages.</p>
+          </Modal>
+
+          <Modal
+            isOpen={modalStates.medium}
+            onClose={() => closeModal('medium')}
+            title="Medium Modal"
+            size="md"
+            variant="secondary"
+          >
+            <p>This is a medium modal (default size) suitable for most content.</p>
+          </Modal>
+
+          <Modal
+            isOpen={modalStates.large}
+            onClose={() => closeModal('large')}
+            title="Large Modal"
+            size="lg"
+            variant="success"
+          >
+            <p className="mb-4">This is a large modal with plenty of space for content.</p>
+            <p>Perfect for forms, detailed information, or complex interactions.</p>
+          </Modal>
+
+          <Modal
+            isOpen={modalStates.noTitle}
+            onClose={() => closeModal('noTitle')}
+          >
+            <div className="py-4">
+              <h3 className="text-lg font-semibold mb-2 text-zinc-900 dark:text-zinc-100">
+                Custom Content
+              </h3>
+              <p>This modal has no title prop, giving you full control over the content styling.</p>
+            </div>
+          </Modal>
+
+          <Modal
+            isOpen={modalStates.noCloseButton}
+            onClose={() => closeModal('noCloseButton')}
+            title="No Close Button"
+            variant="warning"
+            showCloseButton={false}
+          >
+            <p className="mb-4">
+              This modal has no close button. You must click the backdrop or press ESC to close it.
+            </p>
+            <Button variant="primary" onClick={() => closeModal('noCloseButton')}>
+              Close Modal
+            </Button>
+          </Modal>
         </section>
       </div>
     </main>
