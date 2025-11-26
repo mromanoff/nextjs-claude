@@ -145,7 +145,7 @@ export default function Modal({
         tabIndex={-1}
         className={`
           relative w-full ${sizeClasses[size]}
-          bg-white dark:bg-zinc-900
+          bg-background
           rounded-lg shadow-2xl
           ${isClosing ? 'animate-out zoom-out-95 duration-150' : 'animate-in zoom-in-95 duration-200'}
           outline-none
@@ -172,9 +172,9 @@ export default function Modal({
               absolute ${title ? 'top-3 right-3' : 'top-4 right-4'}
               w-8 h-8 rounded-full
               flex items-center justify-center
-              ${title ? 'text-white hover:bg-white/20 dark:hover:bg-white/10' : 'text-zinc-400 hover:text-zinc-600 dark:text-zinc-500 dark:hover:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800'}
+              ${title ? 'text-white hover:bg-white/20 dark:hover:bg-white/10' : 'text-foreground/60 hover:text-foreground hover:bg-foreground/10'}
               transition-colors
-              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2
+              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2
             `}
             aria-label="Close modal"
           >
@@ -193,7 +193,7 @@ export default function Modal({
         )}
 
         {/* Content */}
-        <div className="px-6 py-4 text-zinc-700 dark:text-zinc-300">
+        <div className="px-6 py-4 text-foreground">
           {children}
         </div>
       </div>
