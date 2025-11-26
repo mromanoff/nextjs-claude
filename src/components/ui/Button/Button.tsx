@@ -16,12 +16,12 @@ const sizeClasses = {
 };
 
 const variantClasses = {
-  default: 'bg-zinc-200 text-zinc-700 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600',
+  default: 'bg-zinc-200/50 text-zinc-800 hover:bg-zinc-200 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600',
   primary: 'bg-blue-500 text-white hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700',
   secondary: 'bg-purple-500 text-white hover:bg-purple-600 dark:bg-purple-600 dark:hover:bg-purple-700',
   accent: 'bg-green-500 text-white hover:bg-green-600 dark:bg-green-600 dark:hover:bg-green-700',
-  outline: 'border-2 border-zinc-300 text-zinc-700 hover:bg-zinc-100 dark:border-zinc-600 dark:text-zinc-300 dark:hover:bg-zinc-800',
-  ghost: 'text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800',
+  outline: 'border-2 border-zinc-300 text-zinc-800 hover:bg-zinc-100/50 dark:border-zinc-600 dark:text-zinc-300 dark:hover:bg-zinc-800',
+  ghost: 'text-zinc-800 hover:bg-zinc-100/50 dark:text-zinc-300 dark:hover:bg-zinc-800',
 };
 
 export default function Button({

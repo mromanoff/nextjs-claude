@@ -42,3 +42,9 @@ Make a single UI component according to the [name] and [summary] provided, follo
 - add the component to the `src/app/preview/page.tsx` file so it can be viewd in the browser, and use multiple variants.
 - do not add the component to any other page.
 
+
+## Review the Work
+
+- **Invoke the ui-ux-reviewer subagent** to review your work and implement suggestions where needed
+- Iterate on the review process when needed
+

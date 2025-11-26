@@ -1,4 +1,5 @@
 import Avatar from '@/components/ui/Avatar/Avatar';
+import ThemeToggle from '@/components/ui/ThemeToggle/ThemeToggle';
 import Link from 'next/link';
 
 export default function Header() {
@@ -34,12 +35,13 @@ export default function Header() {
           </Link>
         </nav>
 
-        {/* Right side - User Avatar */}
+        {/* Right side - User Avatar & Theme Toggle */}
         <div className="flex items-center gap-4">
           <div className="hidden sm:block text-sm font-medium text-zinc-700 dark:text-zinc-300">
             John Doe
           </div>
           <Avatar name="John Doe" size="md" variant="primary" />
+          <ThemeToggle />
         </div>
       </div>
     </header>

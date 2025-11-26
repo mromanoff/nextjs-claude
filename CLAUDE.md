@@ -120,4 +120,7 @@ Applied via CSS variables in layout.tsx body className.
 - when making new UI component, always place this component in own forlder as component name. example /src/components/ui/Avatar/Avatar.tsx 
 
 - never use "Co-Authored-By: Claude <noreply@anthropic.com>" in git commit messages or any mentions about claude.
+
 - Use Context7 to check up-to-date docs when needed for implementing new libraries or frameworks, or adding features using them.
+
+- Always use context7 when I need code generation, setup or configuration steps, or library/API documentation. This means you should automatically use the Context7 MCP tools to resolve library id and get library docs without me having to explicitly ask.
