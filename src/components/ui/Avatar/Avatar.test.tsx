@@ -71,31 +71,33 @@ describe('Avatar', () => {
   it('applies default variant when no variant is specified', () => {
     const { container } = render(<Avatar name="Test User" />);
     const avatar = container.firstChild as HTMLElement;
-    expect(avatar.className).toContain('bg-zinc-200');
+    expect(avatar.className).toContain('bg-foreground/10');
+    expect(avatar.className).toContain('text-foreground');
   });
 
   it('applies default variant correctly', () => {
     const { container } = render(<Avatar name="Test User" variant="default" />);
     const avatar = container.firstChild as HTMLElement;
-    expect(avatar.className).toContain('bg-zinc-200');
+    expect(avatar.className).toContain('bg-foreground/10');
+    expect(avatar.className).toContain('text-foreground');
   });
 
   it('applies primary variant correctly', () => {
     const { container } = render(<Avatar name="Test User" variant="primary" />);
     const avatar = container.firstChild as HTMLElement;
-    expect(avatar.className).toContain('bg-blue-500');
+    expect(avatar.style.backgroundColor).toBe('var(--primary)');
   });
 
   it('applies secondary variant correctly', () => {
     const { container } = render(<Avatar name="Test User" variant="secondary" />);
     const avatar = container.firstChild as HTMLElement;
-    expect(avatar.className).toContain('bg-purple-500');
+    expect(avatar.style.backgroundColor).toBe('var(--secondary)');
   });
 
   it('applies accent variant correctly', () => {
     const { container } = render(<Avatar name="Test User" variant="accent" />);
     const avatar = container.firstChild as HTMLElement;
-    expect(avatar.className).toContain('bg-green-500');
+    expect(avatar.style.backgroundColor).toBe('var(--success)');
   });
 
   it('renders with rounded-full class', () => {
@@ -128,7 +130,7 @@ describe('Avatar', () => {
     );
     const avatar = container.firstChild as HTMLElement;
     expect(avatar.className).toContain('h-12');
-    expect(avatar.className).toContain('bg-blue-500');
+    expect(avatar.style.backgroundColor).toBe('var(--primary)');
     expect(avatar.className).toContain('extra-spacing');
   });
 });

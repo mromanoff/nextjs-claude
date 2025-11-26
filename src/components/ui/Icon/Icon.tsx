@@ -13,11 +13,34 @@ const sizeClasses = {
 };
 
 const variantClasses = {
-  primary: 'bg-blue-100/50 text-blue-700 dark:bg-blue-900 dark:text-blue-300',
-  secondary: 'bg-purple-100/50 text-purple-700 dark:bg-purple-900 dark:text-purple-300',
-  success: 'bg-green-100/50 text-green-700 dark:bg-green-900 dark:text-green-300',
-  danger: 'bg-red-100/50 text-red-700 dark:bg-red-900 dark:text-red-300',
-  warning: 'bg-yellow-100/50 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300',
+  primary: '',
+  secondary: '',
+  success: '',
+  danger: '',
+  warning: '',
+};
+
+const variantStyles = {
+  primary: {
+    backgroundColor: 'color-mix(in srgb, var(--primary) 15%, var(--background))',
+    color: 'var(--primary)',
+  },
+  secondary: {
+    backgroundColor: 'color-mix(in srgb, var(--secondary) 15%, var(--background))',
+    color: 'var(--secondary)',
+  },
+  success: {
+    backgroundColor: 'color-mix(in srgb, var(--success) 15%, var(--background))',
+    color: 'var(--success)',
+  },
+  danger: {
+    backgroundColor: 'color-mix(in srgb, var(--danger) 15%, var(--background))',
+    color: 'var(--danger)',
+  },
+  warning: {
+    backgroundColor: 'color-mix(in srgb, var(--warning) 15%, var(--background))',
+    color: 'var(--warning)',
+  },
 };
 
 export default function Icon({
@@ -36,6 +59,7 @@ export default function Icon({
         ${disabled ? 'opacity-50 cursor-not-allowed' : ''}
         ${className}
       `.trim().replace(/\s+/g, ' ')}
+      style={variantStyles[variant]}
     >
       {children}
     </div>

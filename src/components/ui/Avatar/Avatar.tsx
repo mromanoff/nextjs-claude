@@ -13,10 +13,17 @@ const sizeClasses = {
 };
 
 const variantClasses = {
-  default: 'bg-zinc-200 text-zinc-700 dark:bg-zinc-700 dark:text-zinc-200',
-  primary: 'bg-blue-500 text-white dark:bg-blue-600',
-  secondary: 'bg-purple-500 text-white dark:bg-purple-600',
-  accent: 'bg-green-500 text-white dark:bg-green-600',
+  default: 'bg-foreground/10 text-foreground',
+  primary: 'text-white',
+  secondary: 'text-white',
+  accent: 'text-white',
+};
+
+const variantStyles = {
+  default: {},
+  primary: { backgroundColor: 'var(--primary)' },
+  secondary: { backgroundColor: 'var(--secondary)' },
+  accent: { backgroundColor: 'var(--success)' },
 };
 
 /**
@@ -60,6 +67,7 @@ export default function Avatar({
         ${variantClasses[variant]}
         ${className}
       `.trim().replace(/\s+/g, ' ')}
+      style={variantStyles[variant]}
       aria-label={`Avatar for ${name}`}
       title={name}
     >

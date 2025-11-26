@@ -47,31 +47,33 @@ describe('Button', () => {
   it('applies default variant when no variant is specified', () => {
     const { container } = render(<Button>Default Variant</Button>);
     const button = container.firstChild as HTMLElement;
-    expect(button.className).toContain('bg-zinc-200');
+    expect(button.className).toContain('bg-foreground/10');
+    expect(button.className).toContain('text-foreground');
   });
 
   it('applies default variant correctly', () => {
     const { container } = render(<Button variant="default">Default Button</Button>);
     const button = container.firstChild as HTMLElement;
-    expect(button.className).toContain('bg-zinc-200');
+    expect(button.className).toContain('bg-foreground/10');
+    expect(button.className).toContain('text-foreground');
   });
 
   it('applies primary variant correctly', () => {
     const { container } = render(<Button variant="primary">Primary Button</Button>);
     const button = container.firstChild as HTMLElement;
-    expect(button.className).toContain('bg-blue-500');
+    expect(button.style.backgroundColor).toBe('var(--primary)');
   });
 
   it('applies secondary variant correctly', () => {
     const { container } = render(<Button variant="secondary">Secondary Button</Button>);
     const button = container.firstChild as HTMLElement;
-    expect(button.className).toContain('bg-purple-500');
+    expect(button.style.backgroundColor).toBe('var(--secondary)');
   });
 
   it('applies accent variant correctly', () => {
     const { container } = render(<Button variant="accent">Accent Button</Button>);
     const button = container.firstChild as HTMLElement;
-    expect(button.className).toContain('bg-green-500');
+    expect(button.style.backgroundColor).toBe('var(--success)');
   });
 
   it('applies outline variant correctly', () => {
@@ -83,7 +85,7 @@ describe('Button', () => {
   it('applies ghost variant correctly', () => {
     const { container } = render(<Button variant="ghost">Ghost Button</Button>);
     const button = container.firstChild as HTMLElement;
-    expect(button.className).toContain('text-zinc-700');
+    expect(button.className).toContain('text-foreground');
   });
 
   it('calls onClick handler when clicked', async () => {
@@ -159,7 +161,7 @@ describe('Button', () => {
     );
     const button = container.firstChild as HTMLElement;
     expect(button.className).toContain('px-5');
-    expect(button.className).toContain('bg-blue-500');
+    expect(button.style.backgroundColor).toBe('var(--primary)');
     expect(button.className).toContain('extra-padding');
   });
 });

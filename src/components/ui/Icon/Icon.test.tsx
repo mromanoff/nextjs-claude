@@ -39,37 +39,43 @@ describe('Icon', () => {
   it('applies default variant (primary) when no variant is specified', () => {
     const { container } = render(<Icon>💙</Icon>);
     const icon = container.firstChild as HTMLElement;
-    expect(icon.className).toContain('bg-blue-100');
+    expect(icon.style.backgroundColor).toContain('color-mix');
+    expect(icon.style.color).toBe('var(--primary)');
   });
 
   it('applies primary variant correctly', () => {
     const { container } = render(<Icon variant="primary">🔵</Icon>);
     const icon = container.firstChild as HTMLElement;
-    expect(icon.className).toContain('bg-blue-100');
+    expect(icon.style.backgroundColor).toContain('color-mix');
+    expect(icon.style.color).toBe('var(--primary)');
   });
 
   it('applies secondary variant correctly', () => {
     const { container } = render(<Icon variant="secondary">🟣</Icon>);
     const icon = container.firstChild as HTMLElement;
-    expect(icon.className).toContain('bg-purple-100');
+    expect(icon.style.backgroundColor).toContain('color-mix');
+    expect(icon.style.color).toBe('var(--secondary)');
   });
 
   it('applies success variant correctly', () => {
     const { container } = render(<Icon variant="success">✅</Icon>);
     const icon = container.firstChild as HTMLElement;
-    expect(icon.className).toContain('bg-green-100');
+    expect(icon.style.backgroundColor).toContain('color-mix');
+    expect(icon.style.color).toBe('var(--success)');
   });
 
   it('applies danger variant correctly', () => {
     const { container } = render(<Icon variant="danger">❌</Icon>);
     const icon = container.firstChild as HTMLElement;
-    expect(icon.className).toContain('bg-red-100');
+    expect(icon.style.backgroundColor).toContain('color-mix');
+    expect(icon.style.color).toBe('var(--danger)');
   });
 
   it('applies warning variant correctly', () => {
     const { container } = render(<Icon variant="warning">⚠️</Icon>);
     const icon = container.firstChild as HTMLElement;
-    expect(icon.className).toContain('bg-yellow-100');
+    expect(icon.style.backgroundColor).toContain('color-mix');
+    expect(icon.style.color).toBe('var(--warning)');
   });
 
   it('applies disabled state correctly', () => {
@@ -93,7 +99,7 @@ describe('Icon', () => {
     );
     const icon = container.firstChild as HTMLElement;
     expect(icon.className).toContain('h-12');
-    expect(icon.className).toContain('bg-green-100');
+    expect(icon.style.backgroundColor).toContain('color-mix');
     expect(icon.className).toContain('extra-margin');
   });
 

@@ -34,7 +34,7 @@ export default function PreviewPage() {
       <div className="max-w-6xl mx-auto space-y-12">
         <div>
           <h1 className="text-3xl font-bold mb-2 text-foreground">UI Component Preview</h1>
-          <p className="text-zinc-600 dark:text-zinc-400">View and test UI components</p>
+          <p className="text-foreground/70">View and test UI components</p>
         </div>
 
         {/* Card Component */}
@@ -440,7 +440,7 @@ export default function PreviewPage() {
             onClose={() => closeModal('noTitle')}
           >
             <div className="py-4">
-              <h3 className="text-lg font-semibold mb-2 text-zinc-900 dark:text-zinc-100">
+              <h3 className="text-lg font-semibold mb-2 text-foreground">
                 Custom Content
               </h3>
               <p>This modal has no title prop, giving you full control over the content styling.</p>

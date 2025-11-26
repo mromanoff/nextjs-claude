@@ -14,7 +14,7 @@ export default function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="h-9 w-9 rounded-lg bg-zinc-100 dark:bg-zinc-800 animate-pulse" />
+      <div className="h-9 w-9 rounded-lg bg-foreground/10 animate-pulse" />
     );
   }
 
@@ -25,7 +25,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="h-9 w-9 rounded-lg bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 transition-colors flex items-center justify-center text-zinc-700 dark:text-zinc-300"
+      className="h-9 w-9 rounded-lg bg-foreground/10 hover:bg-foreground/20 transition-colors flex items-center justify-center text-foreground"
       aria-label="Toggle theme"
     >
       {resolvedTheme === 'dark' ? (

@@ -16,12 +16,21 @@ const sizeClasses = {
 };
 
 const variantClasses = {
-  default: 'bg-zinc-200/50 text-zinc-800 hover:bg-zinc-200 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600',
-  primary: 'bg-blue-500 text-white hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700',
-  secondary: 'bg-purple-500 text-white hover:bg-purple-600 dark:bg-purple-600 dark:hover:bg-purple-700',
-  accent: 'bg-green-500 text-white hover:bg-green-600 dark:bg-green-600 dark:hover:bg-green-700',
-  outline: 'border-2 border-zinc-300 text-zinc-800 hover:bg-zinc-100/50 dark:border-zinc-600 dark:text-zinc-300 dark:hover:bg-zinc-800',
-  ghost: 'text-zinc-800 hover:bg-zinc-100/50 dark:text-zinc-300 dark:hover:bg-zinc-800',
+  default: 'bg-foreground/10 text-foreground hover:bg-foreground/20',
+  primary: 'text-white hover:opacity-90',
+  secondary: 'text-white hover:opacity-90',
+  accent: 'text-white hover:opacity-90',
+  outline: 'border-2 border-foreground/30 text-foreground hover:bg-foreground/10',
+  ghost: 'text-foreground hover:bg-foreground/10',
+};
+
+const variantStyles = {
+  default: {},
+  primary: { backgroundColor: 'var(--primary)' },
+  secondary: { backgroundColor: 'var(--secondary)' },
+  accent: { backgroundColor: 'var(--success)' },
+  outline: {},
+  ghost: {},
 };
 
 export default function Button({
@@ -40,12 +49,13 @@ export default function Button({
       disabled={disabled}
       className={`
         inline-flex items-center justify-center rounded-md font-medium
-        transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500
+        transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary
         disabled:opacity-50 disabled:cursor-not-allowed
         ${sizeClasses[size]}
         ${variantClasses[variant]}
         ${className}
       `.trim().replace(/\s+/g, ' ')}
+      style={variantStyles[variant]}
     >
       {children}
     </button>

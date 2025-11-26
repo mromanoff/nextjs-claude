@@ -23,11 +23,6 @@ describe('Header', () => {
     expect(screen.getByText('About')).toBeInTheDocument();
   });
 
-  it('renders Contact navigation link', () => {
-    render(<Header />);
-    expect(screen.getByText('Contact')).toBeInTheDocument();
-  });
-
   it('Home link has correct href', () => {
     render(<Header />);
     const homeLink = screen.getByText('Home').closest('a');
@@ -44,12 +39,6 @@ describe('Header', () => {
     render(<Header />);
     const aboutLink = screen.getByText('About').closest('a');
     expect(aboutLink).toHaveAttribute('href', '/about');
-  });
-
-  it('Contact link has correct href', () => {
-    render(<Header />);
-    const contactLink = screen.getByText('Contact').closest('a');
-    expect(contactLink).toHaveAttribute('href', '/contact');
   });
 
   it('renders user name "John Doe"', () => {
