@@ -71,13 +71,21 @@ export default function Modal({
     lg: 'max-w-2xl',
   };
 
-  // Variant classes for header styling
+  // Variant classes for header styling using CSS variables
   const variantClasses = {
-    primary: 'bg-blue-500 dark:bg-blue-600 text-white',
-    secondary: 'bg-purple-500 dark:bg-purple-600 text-white',
-    success: 'bg-green-500 dark:bg-green-600 text-white',
-    danger: 'bg-red-500 dark:bg-red-600 text-white',
-    warning: 'bg-amber-500 dark:bg-amber-600 text-white',
+    primary: 'text-white',
+    secondary: 'text-white',
+    success: 'text-white',
+    danger: 'text-white',
+    warning: 'text-white',
+  };
+
+  const variantStyles = {
+    primary: { backgroundColor: 'var(--primary)' },
+    secondary: { backgroundColor: 'var(--secondary)' },
+    success: { backgroundColor: 'var(--success)' },
+    danger: { backgroundColor: 'var(--danger)' },
+    warning: { backgroundColor: 'var(--warning)' },
   };
 
   // Handle escape key and focus restoration
@@ -146,7 +154,10 @@ export default function Modal({
       >
         {/* Header */}
         {title && (
-          <div className={`px-6 py-4 rounded-t-lg ${variantClasses[variant]}`}>
+          <div
+            className={`px-6 py-4 rounded-t-lg ${variantClasses[variant]}`}
+            style={variantStyles[variant]}
+          >
             <h2 id="modal-title" className="text-xl font-semibold">
               {title}
             </h2>

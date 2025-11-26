@@ -52,37 +52,37 @@ describe('Modal', () => {
   it('applies default variant (primary) when no variant is specified', () => {
     const { container } = render(<Modal {...defaultProps} title="Title">Content</Modal>);
     const header = screen.getByText('Title').parentElement as HTMLElement;
-    expect(header?.className).toContain('bg-blue-500');
+    expect(header?.style.backgroundColor).toBe('var(--primary)');
   });
 
   it('applies primary variant correctly', () => {
     const { container } = render(<Modal {...defaultProps} variant="primary" title="Title">Content</Modal>);
     const header = screen.getByText('Title').parentElement as HTMLElement;
-    expect(header?.className).toContain('bg-blue-500');
+    expect(header?.style.backgroundColor).toBe('var(--primary)');
   });
 
   it('applies secondary variant correctly', () => {
     const { container } = render(<Modal {...defaultProps} variant="secondary" title="Title">Content</Modal>);
     const header = screen.getByText('Title').parentElement as HTMLElement;
-    expect(header?.className).toContain('bg-purple-500');
+    expect(header?.style.backgroundColor).toBe('var(--secondary)');
   });
 
   it('applies success variant correctly', () => {
     const { container } = render(<Modal {...defaultProps} variant="success" title="Title">Content</Modal>);
     const header = screen.getByText('Title').parentElement as HTMLElement;
-    expect(header?.className).toContain('bg-green-500');
+    expect(header?.style.backgroundColor).toBe('var(--success)');
   });
 
   it('applies danger variant correctly', () => {
     const { container } = render(<Modal {...defaultProps} variant="danger" title="Title">Content</Modal>);
     const header = screen.getByText('Title').parentElement as HTMLElement;
-    expect(header?.className).toContain('bg-red-500');
+    expect(header?.style.backgroundColor).toBe('var(--danger)');
   });
 
   it('applies warning variant correctly', () => {
     const { container } = render(<Modal {...defaultProps} variant="warning" title="Title">Content</Modal>);
     const header = screen.getByText('Title').parentElement as HTMLElement;
-    expect(header?.className).toContain('bg-amber-500');
+    expect(header?.style.backgroundColor).toBe('var(--warning)');
   });
 
   it('calls onClose when close button is clicked', async () => {
@@ -162,6 +162,6 @@ describe('Modal', () => {
 
     expect(modal?.className).toContain('max-w-2xl');
     expect(modal?.className).toContain('extra-class');
-    expect(header?.className).toContain('bg-green-500');
+    expect(header?.style.backgroundColor).toBe('var(--success)');
   });
 });

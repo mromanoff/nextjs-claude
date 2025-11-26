@@ -3,16 +3,50 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Variant colors */
+  --primary: #3b82f6;
+  --primary-dark: #2563eb;
+  --secondary: #a855f7;
+  --secondary-dark: #9333ea;
+  --success: #22c55e;
+  --success-dark: #16a34a;
+  --danger: #ef4444;
+  --danger-dark: #dc2626;
+  --warning: #f59e0b;
+  --warning-dark: #d97706;
 }
 
 .dark {
   --background: #0a0a0a;
   --foreground: #ededed;
+
+  /* Variant colors - slightly adjusted for dark mode */
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #9333ea;
+  --secondary-dark: #7e22ce;
+  --success: #16a34a;
+  --success-dark: #15803d;
+  --danger: #dc2626;
+  --danger-dark: #b91c1c;
+  --warning: #d97706;
+  --warning-dark: #b45309;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-secondary-dark: var(--secondary-dark);
+  --color-success: var(--success);
+  --color-success-dark: var(--success-dark);
+  --color-danger: var(--danger);
+  --color-danger-dark: var(--danger-dark);
+  --color-warning: var(--warning);
+  --color-warning-dark: var(--warning-dark);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
