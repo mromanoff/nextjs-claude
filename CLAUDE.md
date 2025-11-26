@@ -124,3 +124,4 @@ Applied via CSS variables in layout.tsx body className.
 - Use Context7 to check up-to-date docs when needed for implementing new libraries or frameworks, or adding features using them.
 
 - Always use context7 when I need code generation, setup or configuration steps, or library/API documentation. This means you should automatically use the Context7 MCP tools to resolve library id and get library docs without me having to explicitly ask.
+- if you see port 3000 is taking. don't create another port. kill 3000 and restart the server
