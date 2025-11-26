@@ -8,9 +8,12 @@ export default function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo / Site Title */}
         <div className="flex items-center gap-2">
-          <div className="text-xl font-semibold tracking-tight text-foreground">
+          <Link
+            href="/"
+            className="text-xl font-semibold tracking-tight text-foreground transition-colors hover:text-foreground/80"
+          >
             MyApp
-          </div>
+          </Link>
         </div>
 
         {/* Navigation */}
