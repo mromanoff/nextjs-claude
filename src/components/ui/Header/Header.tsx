@@ -1,4 +1,5 @@
-import Avatar from '../Avatar/Avatar';
+import Avatar from '@/components/ui/Avatar/Avatar';
+import Link from 'next/link';
 
 export default function Header() {
   return (
@@ -13,24 +14,30 @@ export default function Header() {
 
         {/* Navigation */}
         <nav className="hidden md:flex items-center gap-6">
-          <a
-            href="#"
+          <Link
+            href="/"
             className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
           >
             Home
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/preview"
+            className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+          >
+            Preview
+          </Link>
+          <Link
+            href="/about"
             className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
           >
             About
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/contact"
             className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
           >
             Contact
-          </a>
+          </Link>
         </nav>
 
         {/* Right side - User Avatar */}

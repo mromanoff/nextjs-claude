@@ -30,11 +30,11 @@ pnpm lint
 
 ### Component Organization
 
-UI components live in `/app/components/ui/` for reusable interface elements. The project follows Next.js App Router conventions with file-based routing in the `/app` directory.
+UI components live in `/src/components/ui/` for reusable interface elements. The project follows Next.js App Router conventions with file-based routing in the `/src/app/` directory. All source code lives under the `/src/` directory.
 
 **Directory Structure:**
-- `/app/components/ui/` - Reusable UI components (Avatar, Header, etc.)
-- `/app/` - Page components and routing
+- `/src/app/` - Page components and routing (App Router)
+- `/src/components/ui/` - Reusable UI components (Avatar, Button, Header, etc.)
 
 **Key Patterns:**
 - Server Components by default (no 'use client' directive needed)
@@ -94,16 +94,16 @@ const sizeClasses = {
 
 **Layout Hierarchy:**
 ```
-RootLayout (app/layout.tsx)
-  └─ Header (app/components/ui/Header/Header.tsx)
-       └─ Avatar (app/components/ui/Avatar/Avatar.tsx)
+RootLayout (src/app/layout.tsx)
+  └─ Header (src/components/ui/Header/Header.tsx)
+       └─ Avatar (src/components/ui/Avatar/Avatar.tsx)
   └─ Page Content
 ```
 
 **Existing Reusable Components:**
-- `Avatar` (app/components/ui/Avatar/Avatar.tsx): Displays user initials with configurable size/variant
-- `Button` (app/components/ui/Button/Button.tsx): Interactive button with configurable size/variant/type
-- `Header` (app/components/ui/Header/Header.tsx): Sticky header with navigation and user avatar
+- `Avatar` (src/components/ui/Avatar/Avatar.tsx): Displays user initials with configurable size/variant
+- `Button` (src/components/ui/Button/Button.tsx): Interactive button with configurable size/variant/type
+- `Header` (src/components/ui/Header/Header.tsx): Sticky header with navigation and user avatar
 
 ## Fonts
 
@@ -117,6 +117,7 @@ Applied via CSS variables in layout.tsx body className.
 
 - when making new page compponents, always add a link to that page in the header. Only do this for page components, not UI or other drop-in components.
 
-- when making new UI component, always place this component in own forlder as component name. example /app/components/ui/Avatar/Avatar.tsx 
+- when making new UI component, always place this component in own forlder as component name. example /src/components/ui/Avatar/Avatar.tsx 
 
 - never use "Co-Authored-By: Claude <noreply@anthropic.com>" in git commit messages or any mentions about claude.
+- Use Context7 to check up-to-date docs when needed for implementing new libraries or frameworks, or adding features using them.
