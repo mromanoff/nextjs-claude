@@ -32,12 +32,6 @@ export default function Header() {
           >
             About
           </Link>
-          <Link
-            href="/contact"
-            className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
-          >
-            Contact
-          </Link>
         </nav>
 
         {/* Right side - User Avatar */}
