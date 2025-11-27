@@ -12,7 +12,7 @@ export default function Header() {
             href="/"
             className="text-xl font-semibold tracking-tight text-foreground transition-colors hover:text-foreground/80"
           >
-            MyApp
+            AISandbox
           </Link>
         </div>
 

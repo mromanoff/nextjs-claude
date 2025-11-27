@@ -3,9 +3,9 @@ import { describe, it, expect } from 'vitest';
 import Header from './Header';
 
 describe('Header', () => {
-  it('renders site title "MyApp"', () => {
+  it('renders site title "AISandbox"', () => {
     render(<Header />);
-    expect(screen.getByText('MyApp')).toBeInTheDocument();
+    expect(screen.getByText('AISandbox')).toBeInTheDocument();
   });
 
   it('renders Home navigation link', () => {
