@@ -16,11 +16,11 @@ const sizeClasses = {
 };
 
 const variantClasses = {
-  default: 'bg-foreground/10 text-foreground hover:bg-foreground/20',
-  primary: 'text-white hover:opacity-90',
-  secondary: 'text-white hover:opacity-90',
-  accent: 'text-white hover:opacity-90',
-  outline: 'border-2 border-foreground/30 text-foreground hover:bg-foreground/10',
+  default: 'bg-foreground/10 text-foreground hover:bg-foreground/20 shadow-[0_4px_0_0_rgba(0,0,0,0.15)] hover:shadow-[0_2px_0_0_rgba(0,0,0,0.15)] active:shadow-[0_0_0_0_rgba(0,0,0,0.15)]',
+  primary: 'text-white hover:translate-y-[1px] active:translate-y-[4px] shadow-[0_4px_0_0_rgba(0,0,0,0.2)] hover:shadow-[0_3px_0_0_rgba(0,0,0,0.2)] active:shadow-[0_0_0_0_rgba(0,0,0,0.2)]',
+  secondary: 'text-white hover:translate-y-[1px] active:translate-y-[4px] shadow-[0_4px_0_0_rgba(0,0,0,0.2)] hover:shadow-[0_3px_0_0_rgba(0,0,0,0.2)] active:shadow-[0_0_0_0_rgba(0,0,0,0.2)]',
+  accent: 'text-white hover:translate-y-[1px] active:translate-y-[4px] shadow-[0_4px_0_0_rgba(0,0,0,0.2)] hover:shadow-[0_3px_0_0_rgba(0,0,0,0.2)] active:shadow-[0_0_0_0_rgba(0,0,0,0.2)]',
+  outline: 'border-2 border-foreground/30 text-foreground hover:bg-foreground/10 shadow-[0_3px_0_0_rgba(0,0,0,0.1)] hover:shadow-[0_2px_0_0_rgba(0,0,0,0.1)] active:shadow-[0_0_0_0_rgba(0,0,0,0.1)]',
   ghost: 'text-foreground hover:bg-foreground/10',
 };
 
@@ -48,9 +48,10 @@ export default function Button({
       onClick={onClick}
       disabled={disabled}
       className={`
-        inline-flex items-center justify-center rounded-md font-medium
-        transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary
-        disabled:opacity-50 disabled:cursor-not-allowed
+        inline-flex items-center justify-center rounded-2xl font-medium
+        transition-all duration-150 ease-in-out
+        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary
+        disabled:opacity-50 disabled:cursor-not-allowed disabled:translate-y-0 disabled:shadow-none
         ${sizeClasses[size]}
         ${variantClasses[variant]}
         ${className}
